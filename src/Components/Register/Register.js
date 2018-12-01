@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react';
+import {Button, Form, Grid, Header, Segment } from 'semantic-ui-react';
 import './Register.css';
 import axios from 'axios'
 
@@ -35,10 +35,10 @@ handleChange = (e) => {
       bio: this.state.bio,
       url: this.state.url
     }
-    axios.post('http://localhost:8080/api/register',user)
+    axios.post('/api/register',user)
     .then(() => {
       this.props.history.push('../Login/Login')
-    alert('welcome to wootah crew')
+    alert('Welcome to Wootah Crew')
     })
     .catch(err => console.log(err))
   }
@@ -81,18 +81,6 @@ handleChange = (e) => {
             onChange={this.handleChange} />
             <Form.Input fluid icon='image' iconPosition='left' name='url' placeholder='image url' value={this.state.url} 
             onChange={this.handleChange} />
-            <Header as='h2' color='#eb5e28' textAlign='center'>
-            <br/>
-            <div className='interest'>
-            Select some interest for your news feed
-            </div>
-            </Header>
-            <Button id='button1' color='#eb5e28' fluid size='large' > Dogs</Button>
-            <br/>
-            <Button id='button2' color='#eb5e28' fluid size='large'> Cats</Button>
-            <br/>
-            <Button id='button3' color='#eb5e28' fluid size='large'> Jokes</Button>
-            <br/>
             <br/>
             <Button id='buttonRegister' onClick = {this.handleClickRegister} color='teal' fluid size='large'> Register
             </Button>

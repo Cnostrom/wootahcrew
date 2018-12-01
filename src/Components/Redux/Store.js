@@ -1,5 +1,14 @@
-import {createStore, applyMiddleware} from 'redux';
-import reducer from './reducer';
-import thunk from '../../node_modules/redux-thunk';
+import {createStore, applyMiddleware, combineReducers} from 'redux';
+import reducer from './Reducer';
+import thunk from 'redux-thunk';
+import { connectRouter,  routerMiddleware } from 'connected-react-router';
+import history from '../../history';
 
-export default createStore(reducer,applyMiddleware(thunk));
+const rootReducer = combineReducers({
+  router:connectRouter(history),
+  user:reducer
+})
+
+
+
+export default createStore(rootReducer,applyMiddleware(thunk, routerMiddleware(history)));

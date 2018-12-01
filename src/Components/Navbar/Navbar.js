@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './Navbar.css';
+import axios from 'axios';
 
 
 export default class Navbar extends Component {
@@ -7,7 +8,12 @@ export default class Navbar extends Component {
     this.props.history.push('../Dashboard/Dashboard')
   }
   handleClickLogout = () => {
-    this.props.history.push('../Login/Login')
+    axios.get('/api/logout')
+    .then(() => {
+      this.props.history.push('../Login/Login')
+    alert('You are logged out')
+    })
+    .catch(err => console.log(err))
   }
 
 
@@ -15,7 +21,7 @@ export default class Navbar extends Component {
     return (
 
       <div className='navbar'>
-        <button className= 'home' onClick={this.handleClickHome}>Home</button>
+        I want to go <a href='http://localhost:3000/dashboard'>home</a>
         <p className='title'>Wootah Crew</p>
         <button className= 'logout' onClick={this.handleClickLogout}>Logout</button>
         

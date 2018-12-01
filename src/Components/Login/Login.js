@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Login.css';
-import {Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react';
+import {Button, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
 import axios from 'axios'
 
 class Login extends Component {
@@ -21,13 +21,9 @@ class Login extends Component {
       username: this.state.username,
       password: this.state.password
     }
-    axios.post ('http://localhost:8080/api/login', user)
+    axios.post ('/api/login', user)
     .then(() => this.props.history.push('../Dashboard/Dashboard'))
     .catch((err) => console.log(err))
-  }
-
-  handleClickRegister = () => {
-    this.props.history.push('../Register')
   }
   
   render() {
@@ -37,15 +33,12 @@ class Login extends Component {
       <div className='login-header'>
       <Header as='h2' color='teal' textAlign='center'> Welcome to Wootah Crew
           </Header>
-      <p>This is where I will tell you about this app to see if it is something you are interested in</p>
-
+      <p>This app was created for a group of friends to be able to create posts to</p>
+      <p>remember good times or to create interest in an upcoming event.</p>
+      <h3>mostly it was made so we could make fun of each other!</h3>
 
       </div>
-      {/*
-        Heads up! The styles below are necessary for the correct render of this example.
-        You can do same with CSS, the main idea is that all the elements up to the `Grid`
-        below must have a height of 100%.
-      */}
+      
       <style>{`
         body > div,
         body > div > div,
@@ -66,7 +59,7 @@ class Login extends Component {
             </Segment>
           </Form>
           <Message>
-            New to us? <a href='#' onClick = {this.handleClickRegister} >Sign Up</a>
+            New to us? <a href='http://localhost:3000/register'>Sign Up</a>
           </Message>
         </Grid.Column>
       </Grid>
@@ -98,28 +91,3 @@ class Login extends Component {
   
   
       
-//     );
-//   }
-// }
-
-// export default Login;
-
-
-{/* <div className="login">
-      <h1>Welcome to Wootah crew</h1>
-      <p>This is where I will tell you about this app to see if it is something you are interested in</p>
-      <div className='login-title'>
-      <h4>log-in to your account</h4>
-      <div className='login-form'>
-      <input name ='email' value ={this.state.email} onChange ={this.handleChange} /> 
-      <br/>
-      <input name ='password' value ={this.state.password} onChange ={this.handleChange} /> 
-      <br/>
-      <button>login</button>
-        </div>
-        <div className='signup'>
-      <button onClick= {this.handleClick} className ='newsignUp'>New to us? Sign Up</button>
-
-        </div>
-       </div>
-      </div> */}

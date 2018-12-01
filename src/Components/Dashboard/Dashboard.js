@@ -2,20 +2,13 @@ import React, { Component } from 'react';
 import './Dashboard.css';
 import Navbar from '../Navbar/Navbar';
 import User from '../User/User';
-
+import Form from '../Form/Form';
 
 
 
 class Dashboard extends Component {
-  state = {
-    
-  }
-
-  handleChange = (e) => {
-    const key = e.target.name;
-    const value = e.target.value;
-    this.setState({ [key]: value })
-    
+  state={
+    name:'Curtis'
   }
 
   render() {
@@ -23,9 +16,10 @@ class Dashboard extends Component {
       
       <div className="dashboard">
        <Navbar/>
-      <h1>Dashboard</h1>
+      <h1>Welcome back {this.state.name}</h1>
       <div className='user-info'>
      <User/>
+     <Form/>
     
        </div>
       </div>

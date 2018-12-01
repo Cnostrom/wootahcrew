@@ -5,20 +5,25 @@ import './User.css';
 export default class User extends Component {
 state = {
 url:'https://robohash.org/BRR.png',
-username:'cnostrom',
+username:'Cnostrom',
 state:'utah',
-bio:'This is just info about me.'
+joinedYear:'2018'
 }
   
   render() {
     return (
-        <div class='uiCard'>
-    <img src={this.state.url} alt='' class='ui image' />
-    <div class='content'>
-      <div class='header'> {this.state.username}</div>
-      <div class='location'>{this.state.state}</div>
-      <div class='description'>{this.state.bio}</div>
+    <div>
+    <div className='ui card'>
+  <img src={this.state.url} alt =''/>
+  <div className='content'>
+    <div className='header'>{this.state.username}</div>
+    <div className='meta'>
+      <span className='date'>Joined in {this.state.joinedYear}</span>
     </div>
+    <div className='description'>{this.state.username} is from {this.state.state}.</div>
+  </div>
+  
+</div>
     
     </div>
   
