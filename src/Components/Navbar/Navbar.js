@@ -1,32 +1,22 @@
 import React, { Component } from 'react'
 import './Navbar.css';
-import axios from 'axios';
+import { withRouter } from 'react-router-dom';
 
-
-export default class Navbar extends Component {
-  handleClickHome = () => {
-    this.props.history.push('../Dashboard/Dashboard')
-  }
+class Navbar extends Component {
   handleClickLogout = () => {
-    axios.get('/api/logout')
-    .then(() => {
-      this.props.history.push('../Login/Login')
-    alert('You are logged out')
-    })
-    .catch(err => console.log(err))
+    this.props.logout()
+    this.props.push('./login')
   }
-
-
+ 
   render() {
     return (
-
       <div className='navbar'>
-        I want to go <a href='http://localhost:3000/dashboard'>home</a>
-        <p className='title'>Wootah Crew</p>
-        <button className= 'logout' onClick={this.handleClickLogout}>Logout</button>
-        
+        <button className='logout' onClick={ this.handleClickLogout}>Logout</button>
+        <h1 className='title'> Wootah Crew </h1>
+        <div className='logo' />
       </div>
-      
     )
   }
 }
+  
+export default withRouter(Navbar)

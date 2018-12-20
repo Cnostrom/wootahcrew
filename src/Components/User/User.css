@@ -1,5 +1,24 @@
-img {
+.userimg {
+  margin-top: 4px;
   height: 100px;
-  width: 100px;
+  width: 150px;
 }
 
+
+.uicard{
+  border-radius: 8px;
+  position: absolute;
+  margin-left: 40px;
+  height: 180px;
+  width: 200px;
+  background-color: #fffcf2;
+  text-align: center;
+}
+
+
+
+/* @media screen and (max-width:425px){
+  .uicard{
+    display: none;
+  }
+} */

@@ -1,0 +1,1 @@
+delete from wootahpost where wootahpost.id = ($1)

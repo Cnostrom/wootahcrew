@@ -1,24 +1,31 @@
 .navbar {
   display: flex;
-  justify-content: space-between;
   border: solid black 2px; 
-  height: 54px;
-  
-}
-.home {
-margin-left: 100px;
-height: 50px;
-width: 100px;
+  height: 100px;
+  background-image: linear-gradient(#ccc5b9,#403d39,#252422); 
 }
 
-.logout {
-margin-right: 100px;
-height: 50px;
-width: 100px;
+.logout{
+  display: inline-block;
+  height: 40px;
+  width: 120px;
+  font-size: 24px;
+  margin-left: 85px;
+  margin-top: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #403d39;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px rgb(146,131,106);
 }
+
 .title {
-  font-size: 30px;
-  font-family: sans-serif;
-  font-display: bold;
-  color: teal;
+  font-size: 85px;
+  font-family:'Black Ops One', cursive;
+  color: #eb5e28;
+  margin-left: 250px;
 }

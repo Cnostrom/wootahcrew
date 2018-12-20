@@ -1,0 +1,1 @@
+altertable wootahpost (title, url, content,author, userid) values ($1,$2,$3,$4,$5)

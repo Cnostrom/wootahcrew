@@ -1,0 +1,10 @@
+.newsDisplayBox{
+  border:solid black 2px;
+  text-align: center;
+  width:100cw;
+  background-color: rgb(146,131,106);
+}
+
+.NewsImage{
+  width: 200px;
+}
